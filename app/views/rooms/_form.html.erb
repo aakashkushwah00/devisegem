@@ -5,7 +5,7 @@
         <div class='card border-0 shadow' >
           <div class='card-body'>
            
-              <%= form_with model: [ hotel, hotel.rooms.build ], method: :post do |form| %>
+              <%= form_with model: [ @hotel, @hotel.rooms.build ] do |form| %>
               <div>
                 <%= form.label :price %><br>
                 <%= form.text_field :price, class: "form-control my-3 py-2" %>
@@ -29,12 +29,16 @@
                   <div><%= message %></div>
                 <% end %>
               </div>
-            </div>
 
-              <div>
+               <div>
                 <%= form.submit %>
               </div>
+              
             <% end %>
+
+            </div>
+
+             
 
           </div>
         </div>

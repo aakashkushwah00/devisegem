@@ -26,12 +26,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  resources :hotels do 
-    resources :rooms
+  resources :hotels do
+    resources :rooms 
+    resources :employees
   end
   
   get 'rooms/allrooms', to: 'rooms#allrooms';
 
-  resources :employees
   
 end

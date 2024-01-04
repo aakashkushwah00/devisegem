@@ -7,10 +7,6 @@ class RoomsController < ApplicationController
     # @rooms = Room.all
     @hotel = Hotel.find params[:hotel_id]
     @rooms = @hotel.rooms
-    puts "===================================="
-    puts params
-    puts "===================================="
-
   end
 
   def show
@@ -22,20 +18,22 @@ class RoomsController < ApplicationController
   end
 
   def new
-    @room = Room.new
-    @hotel = Hotel.find(params[:hotel_id])
+    # @hotel = Hotel.find(params[:hotel_id])
+    # @room = Room.new
+    # @room = @hotel.Rooms.new
   end
 
   def create 
     @hotel = Hotel.find(params[:hotel_id])
     @room = @hotel.rooms.create(room_params)
-    redirect_to @room
+    redirect_to hotel_path(@hotel)
   end
   
 
   def edit
   end
 
+ 
 
   def destroy 
     @room = Room.find(params[:id])

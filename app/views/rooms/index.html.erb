@@ -23,9 +23,12 @@
                   <td><%= room.price %></td>
                   <td><%= room.occupancy %></td>
                   
-                <td><%= link_to "Show Room", '/hotels/3/rooms/2'%></td>
-                <td><%= link_to "Edit Room", '/hotels/3/rooms/2'%></td>                
-                <td><%= link_to "Delete Room", '/hotels/3/rooms/2'%></td>
+                <td><%= link_to "Show Room", hotel_room_path(@hotel, room.id) %></td>
+                <td><%= link_to "Edit Room", edit_hotel_room_path(@hotel, room.id) %></td>
+                <td><%= link_to "Delete Room", hotel_room_path(@hotel, room.id), data: {
+                    turbo_method: :delete
+                } %></td>
+                
                   
                   
                   
