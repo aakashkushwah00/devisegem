@@ -1,6 +1,247 @@
+
+<%# 
 <h1>Main#home</h1>
-<p>Find me in app/views/main/home.html.erb</p>
+<p>Find me in app/views/main/home.html.erb</p> %>
+
+<!--
 
 <% if current_user %>
     Hello <%= current_user.email %>
 <% end %>
+
+-->
+
+<%= image_tag 'banner.jpg', class: 'w-100 h-100 ' %>
+
+
+ <!-- about -->
+      <div class="about" id="about">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-5">
+                  <div class="titlepage">
+                     <h2>About Us</h2>
+                     <p>The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum. </p>
+                     <a class="read_more btn btn-outline-primary" href="Javascript:void(0)"> Read More</a>
+                  </div>
+               </div>
+               <div class="col-md-7">
+                  <div class="about_img">
+                     <%# <figure><img src="images/about.png" alt="#"/></figure> %>
+                     <%= image_tag 'about.png', class: 'img-fluid' %>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+<!-- end about -->
+
+
+      <!-- our_room -->
+      <div  class="our_room" id="rooms">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Our Room</h2>
+                     <p>Lorem Ipsum available, but the majority have suffered </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-4 col-sm-6">
+                  <div id="serv_hover"  class="room">
+                     <div class="room_img">
+                        <%# <figure><img src="images/room1.jpg" alt="#"/></figure> %>
+                        <%= image_tag "room1.jpg" %>
+                     </div>
+                     <div class="bed_room">
+                        <h3>Bed Room</h3>
+                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div id="serv_hover"  class="room">
+                     <div class="room_img">
+                        <%# <figure><img src="images/room2.jpg" alt="#"/></figure> %>
+                        <%= image_tag "room2.jpg" %>
+
+                     </div>
+                     <div class="bed_room">
+                        <h3>Bed Room</h3>
+                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div id="serv_hover"  class="room">
+                     <div class="room_img">
+                        <%# <figure><img src="images/room3.jpg" alt="#"/></figure> %>
+                        <%= image_tag "room3.jpg" %>
+
+                     </div>
+                     <div class="bed_room">
+                        <h3>Bed Room</h3>
+                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div id="serv_hover"  class="room">
+                     <div class="room_img">
+                        <%# <figure><img src="images/room4.jpg" alt="#"/></figure> %>
+                        <%= image_tag "room4.jpg" %>
+
+                     </div>
+                     <div class="bed_room">
+                        <h3>Bed Room</h3>
+                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div id="serv_hover"  class="room">
+                     <div class="room_img">
+                        <%# <figure><img src="images/room5.jpg" alt="#"/></figure> %>
+                        <%= image_tag "room5.jpg" %>
+                     </div>
+                     <div class="bed_room">
+                        <h3>Bed Room</h3>
+                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div id="serv_hover"  class="room">
+                     <div class="room_img">
+                        <%# <figure><img src="images/room6.jpg" alt="#"/></figure> %>
+                        <%= image_tag "room6.jpg" %>
+                     </div>
+                     <div class="bed_room">
+                        <h3>Bed Room</h3>
+                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end our_room -->
+
+
+      <!-- blog -->
+      <div  class="blog" id="blog">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Blog</h2>
+                     <p>Lorem Ipsum available, but the majority have suffered </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="blog_box">
+                     <div class="blog_img">
+                        <%# <figure><img src="images/blog1.jpg" alt="#"/></figure> %>
+                        <%= image_tag 'blog1.jpg' %>
+                     </div>
+                     <div class="blog_room">
+                        <h3>Bed Room</h3>
+                        <span>The standard chunk </span>
+                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generatorsIf you are   </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="blog_box">
+                     <div class="blog_img">
+                        <%# <figure><img src="images/blog2.jpg" alt="#"/></figure> %>
+                        <%= image_tag 'blog2.jpg' %>
+                     </div>
+                     <div class="blog_room">
+                        <h3>Bed Room</h3>
+                        <span>The standard chunk </span>
+                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generatorsIf you are   </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="blog_box">
+                     <div class="blog_img">
+                        <%# <figure><img src="images/blog3.jpg" alt="#"/></figure> %>
+                        <%= image_tag 'blog3.jpg' %>
+                     </div>
+                     <div class="blog_room">
+                        <h3>Bed Room</h3>
+                        <span>The standard chunk </span>
+                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generatorsIf you are   </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end blog -->
+
+
+      
+
+
+<!--  footer -->
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class=" col-md-4">
+                     <h3>Contact US</h3>
+                     <ul class="conta">
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i> Address</li>
+                        <li><i class="fa fa-mobile" aria-hidden="true"></i> +01 1234569540</li>
+                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> demo@gmail.com</a></li>
+                     </ul>
+                   </div>
+                  <div class="col-md-4">
+                     <h3>Menu Link</h3>
+                     <ul class="link_menu">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="about.html"> about</a></li>
+                        <li><a href="room.html">Our Room</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-md-4">
+                     <h3>News letter</h3>
+                     <form class="bottom_form">
+                        <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
+                        <button class="sub_btn">subscribe</button>
+                     </form>
+                     <ul class="social_icon">
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-10 offset-md-1">
+                        
+                        <p>
+                        © 2013 - 24 All Rights Reserved. Design by codiatic technologies</a>
+                        <br><br>
+                        Distributed by <a href="http://codiatic.com/" target="_blank">CodiaticTechnologies</a>
+                        </p>
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->

@@ -1,0 +1,44 @@
+<section>
+  <div class='container mt-5 pt-5' >
+    <div class='row' >
+      <div class='col-12 col-sm-8 col-md-6 m-auto'>
+        <div class='card border-0 shadow' >
+          <div class='card-body'>
+           
+              <%= form_with model: [ hotel, hotel.rooms.build ], method: :post do |form| %>
+              <div>
+                <%= form.label :price %><br>
+                <%= form.text_field :price, class: "form-control my-3 py-2" %>
+                <% @room.errors.full_messages_for(:price).each do |message| %>
+                  <div><%= message %></div>
+                <% end %>
+              </div>
+
+              <div>
+                <%= form.label :room_type %><br>
+                <%= form.text_field :room_type, class: "form-control my-3 py-2"%><br>
+                <% @room.errors.full_messages_for(:room_type).each do |message| %>
+                  <div><%= message %></div>
+                <% end %>
+              </div>
+
+              <div>
+                <%= form.label :occupancy %><br>
+                <%= form.text_field :occupancy, class: "form-control my-3 py-2" %><br>
+                <% @room.errors.full_messages_for(:occupancy).each do |message| %>
+                  <div><%= message %></div>
+                <% end %>
+              </div>
+            </div>
+
+              <div>
+                <%= form.submit %>
+              </div>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

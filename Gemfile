@@ -70,3 +70,4 @@ gem 'devise'
 gem "bootstrap"
 
 gem "sassc-rails"
+gem "rolify"

@@ -1,0 +1,58 @@
+<section>
+  <div class='container mt-5 pt-5' >
+    <div class='row' >
+      <div class='col-12 col-sm-8 col-md-6 m-auto'>
+        <div class='card border-0 shadow' >
+          <div class='card-body'>
+            <%= form_with model: @hotel do |form| %>
+              <div>
+                <%= form.label :name %><br>
+                <%= form.text_field :name, class: "form-control my-3 py-2" %>
+                <% @hotel.errors.full_messages_for(:name).each do |message| %>
+                  <div><%= message %></div>
+                <% end %>
+              </div>
+
+              <div>
+                <%= form.label :email %><br>
+                <%= form.text_field :email, class: "form-control my-3 py-2"%><br>
+                <% @hotel.errors.full_messages_for(:email).each do |message| %>
+                  <div><%= message %></div>
+                <% end %>
+              </div>
+
+              <div>
+                <%= form.label :contact_number %><br>
+                <%= form.text_field :contact_number, class: "form-control my-3 py-2" %><br>
+                <% @hotel.errors.full_messages_for(:contact_number).each do |message| %>
+                  <div><%= message %></div>
+                <% end %>
+              </div>
+
+              <div>
+                <%= form.label :address %><br>
+                <%= form.text_area :address, class: "form-control my-3 py-2" %><br>
+                <% @hotel.errors.full_messages_for(:address).each do |message| %>
+                  <div><%= message %></div>
+                <% end %>
+              </div>
+
+              <div>
+                <%= form.label :description %><br>
+                <%= form.text_area :description, class: "form-control my-3 py-2" %><br>
+                <% @hotel.errors.full_messages_for(:description).each do |message| %>
+                  <div><%= message %></div>
+                <% end %>
+              </div>
+
+              <div>
+                <%= form.submit %>
+              </div>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
