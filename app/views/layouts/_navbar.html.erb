@@ -1,8 +1,5 @@
 
-
-
-
-<div class="container-flouid">
+<div class="container-fuild">
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container">
       <a class="navbar-brand" href="/">
@@ -13,20 +10,24 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
           <li class="nav-item">
             <%# <a class="nav-link active" aria-current="page" href="#">Home<a> %>
             <%= link_to 'Home', root_path, class: 'nav-link active' %>
           </li>
+          
+
           <li class="nav-item">
-            <a class="nav-link active" href="#">Courses</a>
+            <a class="nav-link active" aria-current="page" href="#about">About</a>
+            <%# <%= link_to 'About', root_path ,class 'nav-link' > %>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">About</a>
+            <a class="nav-link active" aria-current="page" href="#rooms">Rooms</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Rooms</a>
+            <a class="nav-link active" href="#blog">Blog</a>
           </li>
 
           <li class="nav-item">
@@ -43,6 +44,10 @@
           <% if current_user %>
           <li class="nav-item"> <%= link_to 'Edit Account', edit_user_registration_path, class: 'nav-link btn' %> </li>
           <li class="nav-item"> <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %> </li>
+          
+          <%# <a href="#.", class="my_popup_open">Book Now</a> %>
+          <%# <%= link_to 'Book Now', class: 'btn btn-primary nav-item' %>
+        
 
           <% else %>
           <li class="nav-item"> <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link btn btn-outline-primary'  %> </li>
@@ -53,7 +58,59 @@
           
         </ul>
 
+                <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Book Now
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button t ype="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form action="">
+                  <div class="form-group">
+                    <label for="">Choose hotel</label>
+                    <input type="text" name="" class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="">Check-in date</label>
+                    <input type="text" name="" class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="">Check-out date</label>
+                    <input type="text" name="" class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="">Adult</label>
+                    <input type="text" name="" class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="">Children</label>
+                    <input type="text" name="" class="form-control">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         
       </div>
     </div>
   </nav>
 </div>
+
+ 

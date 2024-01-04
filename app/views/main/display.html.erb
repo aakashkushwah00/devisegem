@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <h1 class="navbar-brand fs-1  fw-bold table table-rounded" href="#" style="text-align :center">Admin Dashboard</h1>
+</nav>
+
+<!-- Sidebar -->
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <!-- Sidebar components, links, and navigation items -->
+      <!-- Add sidebar links, icons, and components as needed -->
+    </nav>
+    <!-- Main content area -->
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <!-- Main content, cards, tables, forms, and components -->
+      <!-- Add content, functionalities, and components as needed -->
+    </main>
+  </div>
+</div>
+
+
+<div class='d-flex p-5'  >
+<div style="margin-right :40px">
+
+<div class="card mt-5" style="width: 18rem">
+  <%# <img src="..." class="card-img-top" alt="..."> %>
+  <div class="card-body">
+    <h2 class="card-title justified-content-center">Hotel Listing</h2>
+    <p class="card-text">Indulge in a memorable stay at our hotel, blending modern amenities with timeless charm.</p>
+    <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+    <%# <%= link_to 'Go somewhere', hotels_index_path, class: 'btn btn-success' %>
+    <%= link_to 'Go somewhere', hotels_path, class: 'btn btn-warning' %>
+
+  </div>
+</div>
+
+</div>
+
+
+<div style="margin-right :40px">
+<div class="card mt-5 " style="width: 18rem;">
+  <%# <img src="..." class="card-img-top" alt="..."> %>
+  <div class="card-body">
+    <h2 class="card-title justified-content-center">Total Rooms</h2>
+    <p class="card-text">Indulge in a memorable stay at our hotel, blending modern amenities with timeless charm.</p>
+    <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+    <%= link_to 'Go somewhere', rooms_allrooms_path, class: 'btn btn-success' %>
+  </div>
+</div>
+
+</div>
+
+<div class="card mt-5" style="width: 18rem;">
+  <%# <img src="..." class="card-img-top" alt="..."> %>
+  <div class="card-body">
+    <h2 class="card-title justified-content-center">All Employee</h2>
+    <p class="card-text">Indulge in a memorable stay at our hotel, blending modern amenities with timeless charm.</p>
+    <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+    <%= link_to 'Go somewhere', employees_allemployee_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+
+</div>
