@@ -1,0 +1,28 @@
+
+ <!-- about -->
+      <div class="about" id="about">
+         <div class="container-fluid">
+            <div class="row">
+
+            <div class="col-md-5">
+                  <div class="about_img">
+                     <%# <figure><img src="images/about.png" alt="#"/></figure> %>
+                     <%= image_tag 'about.png', class: 'img-fluid rounded' %>
+                  </div>
+               </div>
+               
+               <div class="col-md-5">
+                  <div class="titlepage">
+                     <p>A room is one of the separate sections or parts of the inside of a building.  </p>
+                     <p>Room Type : <%= @rooms.room_type %> </p>
+                    <del>1200</del> <br>
+                    900
+                     <a class="read_more btn btn-outline-primary" href="Javascript:void(0)"> Book Now</a>
+                  </div>
+               </div>
+
+               
+            </div>
+         </div>
+      </div>
+<!-- end about -->

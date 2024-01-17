@@ -1,0 +1,46 @@
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<div class="container">
+  <div class="row justify-content-center" style="margin-top: 100px">
+    <div class="col-md-6">
+      <h1 style="margin-top: 10px;margin-left: 80px;color:dark;">
+        Welcome Dear <%= current_user.id %><br>To<span style="color:red"> <%=  %> </span>Hotel.com
+      </h1><hr><br>
+      
+     <%= form_with url:dashboard_index_path, local: true, method: :get do |f| %>
+        <div class="form-group">
+          <%= f.label :from %>
+          <%= f.select :from_id, options_for_select(@hotel),{},{class: "form-select form-select-lg mb-3"}
+          %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Room %>
+          <%= f.select :from_id, options_for_select(@room),{},{class: "form-select form-select-lg mb-3"}
+          %>
+        </div>
+        <div class="form-group">
+          <%= f.label :date %>
+          <%= f.date_field :date, class: "form-control",selected: Date.today, min: 0.days.ago,
+          max: 1.year.from_now, required: true%>
+        </div>
+
+          <%= submit_tag 'Search', class: "btn btn-primary btn-block mt-2" %>
+      <% end %>
+
+
+
+
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#js1').select2();
+  });
+</script>
+<script type="text/javascript">
+   $(document).ready(function() {
+      $('#js2').select2();
+  });
+</script>
+

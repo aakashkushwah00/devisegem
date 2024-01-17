@@ -1,0 +1,28 @@
+
+
+<!-- app/views/rooms/search.html.erb -->
+<h1>Search Available Rooms</h1>
+
+<%= form_tag available_rooms_path, method: :get do %>
+  <%= label_tag 'check_in_date', 'Check-in Date' %>
+  <%= text_field_tag 'check_in_date', nil, type: 'date' %>
+
+  <%= label_tag 'check_out_date', 'Check-out Date' %>
+  <%= text_field_tag 'check_out_date', nil, type: 'date' %>
+
+  <%= label_tag 'guests', 'Number of Guests' %>
+  <%= number_field_tag 'guests', 1, min: 1 %>
+
+  <%= submit_tag 'Search' %>
+<% end %>
+
+<% if @available_rooms.any? %>
+  <h2>Available Rooms</h2>
+  <ul>
+    <% @available_rooms.each do |room| %>
+      <li><%= room.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No available rooms for the selected dates and guests.</p>
+<% end %>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bus Details</title>
+    <%= stylesheet_link_tag 'style', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+<body>
+  <div class="container d-flex justify-content-center align-items-center h">
+    <div class="row">
+      <h2>
+        <h1 class="text-dark text-center text-uppercase">
+          <dt>Hotel Details</dt>
+        </h1></h2><hr>
+      <% @hotels.each do |hotel| %>
+        <div class="col-md-4 mb-4">
+          <div class="card bg-light text-dark rounded shadow">
+            <div class="card-body">
+                <h5 class="card-title"><%= hotel.name %></h5>
+                <p class="card-text">
+                  Hotel Id: <%= hotel.id %><br>
+                  Hotel Address: <%=hotel.address%>
+                  <br>
+                  contact_number: <%=hotel.contact_number%> <br>
+                  Email: <%=hotel.email%> <br>
+
+                </p>
+                
+
+               
+
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</body>

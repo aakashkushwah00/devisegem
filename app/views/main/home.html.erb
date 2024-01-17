@@ -13,6 +13,48 @@
 
 <%= image_tag 'banner.jpg', class: 'w-100 h-100 ' %>
 
+<!-- our hotels -->
+      <div  class="our_room" id="rooms">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Our Hotels</h2>
+                     <p>Lorem Ipsum available, but the majority have suffered </p>
+                  </div>
+               </div>
+            </div>
+
+            <div class="row">
+            
+               <% @hotels.each do |hotel| %>
+               <div class="card">
+               <div class="col-md-4 col-sm-6 d-flex ">
+                  <div id="serv_hover"  class="room">
+
+                     <div class="room_img">
+                        <%= image_tag hotel.hotel_photo %>
+                     </div>
+
+                    
+                     <div class="bed_room">
+                        <h3>Hotel Name : <%= hotel.name %> </h3>
+                        <p>hotel address : <%= hotel.address %></p>
+                        <%# <%= link_to 'Book Now', new_dashboard_path, class: 'btn btn-primary' %>
+                        <%= link_to 'Click me', test_path(hotel), class: 'btn btn-primary' %>
+                     </div>
+
+                  </div>
+               </div>
+               </div>
+                  <% end %>
+               
+              
+            </div>
+         </div>
+      </div>
+<!-- end our hotels -->
+
 
  <!-- about -->
       <div class="about" id="about">
@@ -36,8 +78,23 @@
       </div>
 <!-- end about -->
 
+       
+  <div class="dropdown">
+        <a class="nav-item active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Hotels
+        </a>
+        
+        <ul class="dropdown-menu">
+          <% @hotels.each do |hotel| %>
+            <li class= "dropdown-item">
+                    <%= link_to  hotel.name, hotel_rooms_path(hotel)%>
+            </li>
+            <% end %>
+        </ul>
+      </div>
 
-      <!-- our_room -->
+
+<!-- our_room -->
       <div  class="our_room" id="rooms">
          <div class="container">
             <div class="row">
@@ -48,86 +105,43 @@
                   </div>
                </div>
             </div>
+
             <div class="row">
-               <div class="col-md-4 col-sm-6">
+            
+               <% @rooms.each do |room| %>
+               <div class="col-md-4 col-sm-6 d-flex ">
                   <div id="serv_hover"  class="room">
+
                      <div class="room_img">
-                        <%# <figure><img src="images/room1.jpg" alt="#"/></figure> %>
-                        <%= image_tag "room1.jpg" %>
-                     </div>
-                     <div class="bed_room">
-                        <h3>Bed Room</h3>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div id="serv_hover"  class="room">
-                     <div class="room_img">
-                        <%# <figure><img src="images/room2.jpg" alt="#"/></figure> %>
-                        <%= image_tag "room2.jpg" %>
+                        <%= image_tag room.room_photo %>
 
                      </div>
                      <div class="bed_room">
-                        <h3>Bed Room</h3>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div id="serv_hover"  class="room">
-                     <div class="room_img">
-                        <%# <figure><img src="images/room3.jpg" alt="#"/></figure> %>
-                        <%= image_tag "room3.jpg" %>
+                        <h3>Room Price : <%= room.price %> </h3>
+                        <p>Room_type : <%= room.room_type %></p>
+                        <%# <%= link_to 'Book Now', new_dashboard_path, class: 'btn btn-primary' %>
+                        <%= link_to 'Book Now', bookings_new_path, class: 'btn btn-primary' %>
 
+                        
                      </div>
-                     <div class="bed_room">
-                        <h3>Bed Room</h3>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div id="serv_hover"  class="room">
-                     <div class="room_img">
-                        <%# <figure><img src="images/room4.jpg" alt="#"/></figure> %>
-                        <%= image_tag "room4.jpg" %>
 
-                     </div>
-                     <div class="bed_room">
-                        <h3>Bed Room</h3>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
-                     </div>
                   </div>
                </div>
-               <div class="col-md-4 col-sm-6">
-                  <div id="serv_hover"  class="room">
-                     <div class="room_img">
-                        <%# <figure><img src="images/room5.jpg" alt="#"/></figure> %>
-                        <%= image_tag "room5.jpg" %>
-                     </div>
-                     <div class="bed_room">
-                        <h3>Bed Room</h3>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div id="serv_hover"  class="room">
-                     <div class="room_img">
-                        <%# <figure><img src="images/room6.jpg" alt="#"/></figure> %>
-                        <%= image_tag "room6.jpg" %>
-                     </div>
-                     <div class="bed_room">
-                        <h3>Bed Room</h3>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
-                     </div>
-                  </div>
-               </div>
+                  <% end %>
+               
+              
+               
+               
             </div>
          </div>
       </div>
       <!-- end our_room -->
+
+
+
+     
+      
+      
 
 
       <!-- blog -->
@@ -167,7 +181,7 @@
                         <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generatorsIf you are   </p>
                      </div>
                   </div>
-               </div>
+               </div>occupancy
                <div class="col-md-4">
                   <div class="blog_box">
                      <div class="blog_img">

@@ -1,0 +1,26 @@
+<!-- app/views/bookings/new.html.erb -->
+<h1>New Booking</h1>
+
+<%= form_for @booking do |f| %>
+  <%= f.label :room_id, 'Select Capacity' %>
+  <%= f.collection_select(:room_id, @rooms, :id, :capacity) %>
+
+
+  <%= f.label :check_in_date, 'Check-in Date' %>
+  <%= f.date_field :check_in_date %>
+
+  <%= f.label :check_out_date, 'Check-out Date' %>
+  <%= f.date_field :check_out_date %>
+
+  <%= f.hidden_field :user_id, value: current_user.id %> <!-- Assuming you have a current_user method for authentication -->
+
+  <%= f.submit 'Book Now' %>
+<% end %>
+
+<% if @booking.errors.any? %>
+  <div class="error-messages">
+    <% @booking.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  </div>
+<% end %>

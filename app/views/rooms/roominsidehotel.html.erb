@@ -1,0 +1,42 @@
+<!-- our_room -->
+      <div  class="our_room" id="rooms">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Our Room</h2>
+                     <p>Lorem Ipsum available, but the majority have suffered </p>
+                  </div>
+               </div>
+            </div>
+
+            <div class="row">
+            
+               <% @rooms.each do |room| %>
+               <div class="col-md-4 col-sm-6 d-flex ">
+                  <div id="serv_hover"  class="room">
+
+                     <div class="room_img">
+                        <%= image_tag room.room_photo %>
+
+                     </div>
+                     <div class="bed_room">
+                        <h3>Room Price : <%= room.price %> </h3>
+                        <p>Room_type : <%= room.room_type %></p>
+                        <%# <%= link_to 'Book Now', new_dashboard_path, class: 'btn btn-primary' %>
+                        <%= link_to 'Book Now', new_booking_path, class: 'btn btn-primary' %>
+
+                        
+                     </div>
+
+                  </div>
+               </div>
+                  <% end %>
+               
+              
+               
+               
+            </div>
+         </div>
+      </div>
+      <!-- end our_room -->

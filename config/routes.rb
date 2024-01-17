@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'bookings/new'
+  get 'bookings/index'
+  get 'reservations/index'
+  get 'reservations/show'
+  get 'reservations/new'
+  get 'reservations/edit'
   # get 'employees/index'
   # get 'employees/show'
   # get 'employees/new'
@@ -27,11 +33,21 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :hotels do
-    resources :rooms 
+    resources :rooms do 
+    end
     resources :employees
+    # resources :employees, only: [:index, :new, :create]
   end
+  resources :bookings, only: [:new, :create, :new, :show]
   
-  get 'rooms/allrooms', to: 'rooms#allrooms';
+  resources :dashboard
 
+  get 'rooms/allrooms', to: 'rooms#allrooms';
+  get 'rooms/roominsidehotel', to: 'rooms#roominsidehotel';
+
+
+  get 'main/hotelrooms/:hotel_id', to: 'main#hotelrooms', as: 'test'
+
+  get 'rooms/hotelallrooms', to: 'rooms#hotelallrooms'
   
 end
