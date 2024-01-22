@@ -7,6 +7,11 @@ class MainController < ApplicationController
 
   end
 
+  def show 
+    @room = Room.find(params[:id])
+   
+  end
+
   def roomdisplay
     @rooms = Room.find(params[:id])
   end
@@ -17,6 +22,9 @@ class MainController < ApplicationController
     @rooms = @hotel.rooms
     puts "========================="
     puts @room
+
+
+
   end
 
   def book 

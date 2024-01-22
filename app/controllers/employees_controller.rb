@@ -104,6 +104,7 @@ class EmployeesController < ApplicationController
 
     private
 
+    # filter 
     def set_hotel
       @hotel = Hotel.find(params[:hotel_id])
     end

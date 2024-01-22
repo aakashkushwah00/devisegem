@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <%# <div class="col-md-8 col-xs-12"> %>
+      <div class="table-responsive">
+
+        <h1>Listing Hotels</h1>
+          <table class="table table-bordered table-hover table-dark table-striped">
+            <thead>
+              <tr>
+                <th>Room No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact_Number</th>
+                <th>check_in_date</th>
+                <th>check_out_date</th>
+
+                <th colspan="3">Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @bookings.each do |book| %>
+                <tr>
+                <td><%= book.room_id %></td>
+                  <td><%= book.name %></td>
+                  <td><%= book.email %></td>
+                  <td><%= book.contact_number %></td>
+                  <td><%= book.check_in_date %></td>
+                  <td><%= book.check_out_date %></td>
+                  <td><%= link_to "pdf", booking_path(book, format: :pdf)%></td>
+                  <td><%= link_to "Show", booking_path(book)%></td>
+                  <td><%= button_to "Cancle Booking", booking_path(book), method: :delete %>
+                  </td>
+
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <%= link_to "New hotel", new_hotel_path, class: 'btn btn-outline-primary'  %>
+
+      </div>
+    </div>
+  </div>
+</div>
+

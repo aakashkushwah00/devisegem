@@ -73,3 +73,6 @@ gem "bootstrap"
 
 gem "sassc-rails"
 gem "rolify"
+
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'

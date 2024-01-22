@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'transacations/index'
+ 
+  get 'wallets/index'
   get 'bookings/new'
   get 'bookings/index'
   get 'reservations/index'
@@ -38,9 +41,11 @@ Rails.application.routes.draw do
     resources :employees
     # resources :employees, only: [:index, :new, :create]
   end
-  resources :bookings, only: [:new, :create, :new, :show]
+  resources :bookings, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   
   resources :dashboard
+
+  resources :main
 
   get 'rooms/allrooms', to: 'rooms#allrooms';
   get 'rooms/roominsidehotel', to: 'rooms#roominsidehotel';

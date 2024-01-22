@@ -1,20 +1,45 @@
 <!-- app/views/bookings/new.html.erb -->
+<section>
+  <div class='container mt-5 pt-5' >
+    <div class='row' >
+      <div class='col-12 col-sm-8 col-md-6 m-auto'>
+        <div class='card border-0 shadow' >
+          <div class='card-body'>
 <h1>New Booking</h1>
 
 <%= form_for @booking do |f| %>
-  <%= f.label :room_id, 'Select Capacity' %>
-  <%= f.collection_select(:room_id, @rooms, :id, :capacity) %>
 
+  
+
+  <br> <br>
 
   <%= f.label :check_in_date, 'Check-in Date' %>
-  <%= f.date_field :check_in_date %>
+  <%= f.date_field :check_in_date, class: "form-control my-3 py-2"  %>
 
   <%= f.label :check_out_date, 'Check-out Date' %>
-  <%= f.date_field :check_out_date %>
+  <%= f.date_field :check_out_date,class: "form-control my-3 py-2"  %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name,class: "form-control my-3 py-2",placeholder: "Enter Your Name" %>
+
+  <%= f.label :email%>
+  <%= f.email_field :email,class: "form-control my-3 py-2",placeholder: "Enter Your Email"   %>
+  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+  <br> <br>
+  <%= f.label :contact_number %>
+  <%= f.number_field :contact_number,class: "form-control my-3 py-2", placeholder: "Enter Your Contact"   %>
+
+
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
 
   <%= f.hidden_field :user_id, value: current_user.id %> <!-- Assuming you have a current_user method for authentication -->
+  <%= f.hidden_field :room_id, value: @room.id %>
 
-  <%= f.submit 'Book Now' %>
+  <%= f.submit 'Book Now', class: 'btn btn-success' %>
 <% end %>
 
 <% if @booking.errors.any? %>
@@ -24,3 +49,13 @@
     <% end %>
   </div>
 <% end %>
+
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  

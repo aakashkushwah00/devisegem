@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  total_balance: MyString
+  available_balance: MyString
+  user: one
+
+two:
+  total_balance: MyString
+  available_balance: MyString
+  user: two

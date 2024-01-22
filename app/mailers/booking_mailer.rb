@@ -1,13 +1,21 @@
 class BookingMailer < ApplicationMailer
 
   
-  def booking_success(user)
+  def booking_success(user, booking)
     @user = user 
-    mail(to: @user.email , subject: 'Welcome to Our Hotel Management System')
+    @booking = booking
+    
+    to_address = @user.email
+    mail(to: to_address , subject: 'Room Booking Confirmation')
 
   end
 
-  def booking_cancel
+  def booking_cancel(user, booking)
+    @user = user 
+    @booking = booking
     
+    to_address = @user.email
+    mail(to: to_address , subject: 'Room Cancel Confirmation')
+
   end
 end

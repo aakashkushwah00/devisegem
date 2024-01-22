@@ -1,6 +1,18 @@
 class HotelsController < ApplicationController
   def index
     @hotels = Hotel.all
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "AlleHotel", template: "hotels/index", formats: [:html], layouts: "pdf ",
+        orientation:                    'Landscape',
+        page_size: 'A4'
+
+        # Excluding ".pdf" extension.
+      end
+    end
+    
   end
 
   def show

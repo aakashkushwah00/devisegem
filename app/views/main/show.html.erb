@@ -1,0 +1,35 @@
+<div  class="our_room" id="rooms">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="titlepage">
+                <h2>Our Room</h2>
+                <p>Lorem Ipsum available, but the majority have suffered </p>
+            </div>
+        </div>
+    </div>
+
+        <div class="row">
+           
+            
+            <div class="col-md-5">
+                <%= image_tag @room.room_photo %>
+            </div>
+            <div class="col-md-4">
+                <h1>Grande Room</h1>
+                <h3>Room Type: <%= @room.room_type %> </h3>
+                <h5>Room capacity : <%= @room.capacity %> </h5>
+                <h5>Floor Number : <%= @room.floor_number %> </h5>
+                <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quo quaerat aut excepturi, unde eligendi laborum delectus maiores.</h6>
+            </div>
+            <div class="col-md-3">
+            <h3><del>Rs 450 </del></h3> <br>
+                <h1 style="background: black; color: white; margin-right: 77px; ", class="rounded"><%= @room.price %>
+                <%# <button class="btn btn-primary", style="width: 100px; height: 56px; font-weight: bold">Book</button> %>
+                    <%= link_to 'Book', bookings_new_path(id: @room), class: 'btn btn-primary', style: "width: 100px; height: 56px; font-weight: bold" %>
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
