@@ -1,7 +1,8 @@
+require 'csv'
 class Room < ApplicationRecord
   belongs_to :hotel
   has_one_attached :room_photo
-  has_many :bookings
+  has_many :bookings, dependent: :destroy 
 
 
   # enum status: { available: 0, booked: 1 }
@@ -9,6 +10,10 @@ class Room < ApplicationRecord
   # def available?
   #   status == 'available'
   # end
+
+
+
+
   
   def available?(check_in_date, check_out_date)
     overlapping_bookings = bookings.where(

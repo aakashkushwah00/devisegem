@@ -8,6 +8,16 @@ class RoomsController < ApplicationController
 
     @hotel = Hotel.find params[:hotel_id]
     @rooms = @hotel.rooms
+
+
+    #   respond_to do |format|
+    #   format.html
+    #   format.csv  do 
+    #     csv_data = CsvExportService.new(@rooms).generate_csv
+    #     send_data csv_data, filename: "rooms- #{Date.today}.csv"
+    #   end
+    #  end
+
   end
 
  
@@ -78,8 +88,8 @@ class RoomsController < ApplicationController
   # end
 
 
-  # private 
-  # def room_params 
-  #   params.require(:room).permit(:price,:room_type,:occupancy, :room_photo, :capacity, :floor_number)
-  # end
+  private 
+  def room_params 
+    params.require(:room).permit(:price,:room_type,:occupancy, :room_photo, :capacity, :floor_number)
+  end
 end

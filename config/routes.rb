@@ -1,4 +1,7 @@
+require 'resque/server'
 Rails.application.routes.draw do
+  get 'payments/index'
+  get 'payments/new'
   get 'transacations/index'
  
   get 'wallets/index'
@@ -39,13 +42,41 @@ Rails.application.routes.draw do
     resources :rooms do 
     end
     resources :employees
+    collection do
+      post 'import_csv'
+    end
     # resources :employees, only: [:index, :new, :create]
   end
-  resources :bookings, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  # resources :bookings, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+
+  resources :bookings 
   
+  resources :payments
+  
+  # resources :payments
+
   resources :dashboard
 
+  resources :checkout, only: [:create]
+
   resources :main
+
+  authenticate :user do
+    mount Resque::Server.new, at: '/jobs'
+  end
+
+  # authenticate :user, -> (u) {u.id == 11} do
+  #   mount Resque::Server.new, at: '/jobs'
+  # end
+
+
+  # resources :products
+
+  post 'checkout/create', to: 'checkout#create'
+  # resources :checkout
+
+
+
 
   get 'rooms/allrooms', to: 'rooms#allrooms';
   get 'rooms/roominsidehotel', to: 'rooms#roominsidehotel';
@@ -54,5 +85,10 @@ Rails.application.routes.draw do
   get 'main/hotelrooms/:hotel_id', to: 'main#hotelrooms', as: 'test'
 
   get 'rooms/hotelallrooms', to: 'rooms#hotelallrooms'
+
+  # get 'payments/new', to: 'payments#new'
+  # get 'payments/create', to: 'payments#create'
+
+  resources :payments
   
 end

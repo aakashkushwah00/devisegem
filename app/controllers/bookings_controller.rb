@@ -30,15 +30,27 @@ class BookingsController < ApplicationController
     puts @room
 
     if room_available?(@booking.room, @booking.check_in_date, @booking.check_out_date) && @booking.save
+    # if room_available?(@booking.room, @booking.check_in_date, @booking.check_out_date)  
 
-      BookingMailer.booking_success(current_user, @booking).deliver_now
+      # BookingMailer.booking_success(current_user, @booking).deliver_now
+      # redirect_to payments_new_path(room_id: @room)
+      # flash[:notice] = 'Room booked successfully!'
 
-      flash[:notice] = 'Room booked successfully!'
-      redirect_to main_index_path
+        # if true 
+        #   redirect_to payments_new_payment_path
+        # end 
+ 
+        @booking.create_payment(amount: @booking.total_amount, status: 'paid')
+        redirect_to @booking, notice: 'Booking successful!'
+                
+      
     else
       flash[:alert] = 'Room not available for the selected dates.'
       render :new, status: 422
     end
+
+
+      
 
     
   end

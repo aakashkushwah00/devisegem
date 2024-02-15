@@ -49,6 +49,9 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
 
   gem "letter_opener"
+
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -76,3 +79,14 @@ gem "rolify"
 
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+
+gem 'stripe'
+
+# gem 'sidekiq'
+# gem "sidekiq-cron", "~> 1.12"
+
+gem "whenever"
+
+gem 'resque'
+
+gem 'faker'

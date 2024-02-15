@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_19_103831) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_29_070706) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -77,6 +77,24 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_19_103831) do
     t.string "description"
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.bigint "booking_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "card_number"
+    t.date "expiration_date"
+    t.integer "cvv"
+    t.index ["booking_id"], name: "index_payments_on_booking_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
@@ -135,12 +153,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_19_103831) do
   end
 
   create_table "wallets", force: :cascade do |t|
-    t.string "total_balance"
-    t.string "available_balance"
-    t.bigint "user_id", null: false
+    t.bigint "booking_id", null: false
+    t.decimal "amount"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_wallets_on_user_id"
+    t.index ["booking_id"], name: "index_wallets_on_booking_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -148,7 +166,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_19_103831) do
   add_foreign_key "bookings", "rooms"
   add_foreign_key "bookings", "users"
   add_foreign_key "employees", "hotels"
+  add_foreign_key "payments", "bookings"
   add_foreign_key "rooms", "hotels"
   add_foreign_key "transacations", "users"
-  add_foreign_key "wallets", "users"
+  add_foreign_key "wallets", "bookings"
 end

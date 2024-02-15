@@ -70,9 +70,10 @@
   <div class="card mt-5" style="width: 18rem;">
   <%# <img src="..." class="card-img-top" alt="..."> %>
   <div class="card-body">
-    <h2 class="card-title justified-content-center">All Booking</h2>
+    <h2 class="card-title justified-content-center">downloade csv</h2>
     <p class="card-text">Indulge in a memorable stay at our hotel, blending modern amenities with timeless charm.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+    <%= link_to 'downloadeCSV', hotels_path(format: :csv), class: 'btn btn-primary' %>
   </div>
 </div>
 
