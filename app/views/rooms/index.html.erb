@@ -25,22 +25,14 @@
                   
                 <td><%= link_to "Show Room", hotel_room_path(@hotel, room.id) %></td>
                 <td><%= link_to "Edit Room", edit_hotel_room_path(@hotel, room.id) %></td>
-                <td><%= link_to "Delete Room", hotel_room_path(@hotel, room.id), data: {
-                    turbo_method: :delete
-                } %></td>
                 
-                  
-                  
-                  
-                            
-
+          
                 </tr>
               <% end %>
             </tbody>
 
-
           </table>
-
+     
       <%= link_to 'New Room', new_hotel_room_path, class: 'btn btn-outline-primary' %>
       </div>
     </div>

@@ -1,0 +1,41 @@
+<!-- app/views/admin/hotel_employees/_form.html.erb -->
+
+<section>
+  <div class='container mt-5 pt-5' >
+    <div class='row' >
+      <div class='col-12 col-sm-8 col-md-6 m-auto'>
+        <div class='card border-0 shadow' >
+          <div class='card-body'>
+
+            <%= form_with mod: 'hotel_employee' do |form| %>
+<%# [ hotel, hotel.rooms.build ] %>
+              <div>
+                <%= form.label :first_name %>
+                <%= form.text_field :first_name, class: 'form-control my-3 py-2' %>
+              </div>
+
+              <div>
+                <%= form.label :last_name %>
+                <%= form.text_field :last_name, class: "form-control my-3 py-2" %>
+              </div>
+
+              <div>
+                <%= form.label :position %>
+                <%= form.text_field :position, class: "form-control my-3 py-2" %>
+              </div>
+              <div>
+                <%= form.label :salary %>
+                <%= form.text_field :salary, class: "form-control my-3 py-2" %>
+              </div>
+
+              <div>
+                <%= form.submit %>
+              </div>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

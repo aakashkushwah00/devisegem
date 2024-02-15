@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
 
     before_action :configure_permitted_parameters, if: :devise_controller?
@@ -21,6 +21,7 @@ class ApplicationController < ActionController::Base
       if resource.role == 'admin'  # Replace with your admin model name if different
         main_display_path  # Redirect to admin dashboard path after admin signs in
         # Redirect to user dashboard path after user signs in # Fallback to default behavior for other resources
+      
       else
         root_path
       end

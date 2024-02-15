@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Details</title>
+  <%= wicked_pdf_stylesheet_link_tag 'application' %> <!-- Include your stylesheets -->
+</head>
+    <style>
+      .letter{
+        font-family: corbel;
+      }
+      .first-paragraph{
+        text-align: center;
+        float: right;
+      }
+      .second-paragraph{
+        padding-top: 80px;
+      }
+      .third-paragraph{
+        float: right
+      }
+      .name{
+        padding-top: 40px;
+      }
+    </style>
+
+<body>
+
+  <div class="letter">
+    <h1 style="text-align: center">Booking Confirmation Letter</h1> <br><br>
+
+    <p>
+      Thank you for choosing our hotel. We look forward to hosting you!
+    </p> <br><br><br><br>
+    
+      <div>
+          PDF generation date:
+          <%= Time.zone.now %>
+      </div>
+    
+    <div class="letter">
+      <p class="first-paragraph">7, khandwa m.p. <br>sanjay <br>nager</p>
+      <p class="second-paragraph">wheeler's deals <br> 12 main street  <br>baytown<br> kt128RL <br></p>
+      <p class="third-paragraph">26th july 2023</p>
+      <p>
+        Dear <%= @booking.name %>,
+      </p>
+
+      <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          We are pleased to confirm your booking with us. Below are the details of your reservation:
+          If you have any questions or need further assistance, please don't hesitate to
+          <a href="mailto:aakash.kushwah@codiatic.com">contact us</a>.
+      </p>
+      <br><br>
+
+      <ul>
+        <li><strong>Booking ID:</strong> <%= @booking.id %></li>
+        <li><strong>Guest Name:</strong> <%= @booking.name %></li>
+        <li><strong>Email:</strong> <%= @booking.email %></li>
+        <li><strong>Contact:</strong> <%= @booking.contact_number %></li>
+        <li><strong>Check-in Date:</strong> <%= @booking.check_in_date %></li>
+        <li><strong>Check-out Date:</strong> <%= @booking.check_out_date %></li>
+        <li> <%# <strong>Description:</strong> <%= @booking.description %>  </li>
+      </ul>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus enim porro et dicta eaque rerum ab eius alias reiciendis, quod ut cum, natus, cupiditate quidem provident dolore itaque? Officia, in.</p> <br><br>
+
+      <p>Best Regards,<br>
+      Hotel Management Team</p>  
+    </div>
+  </div>
+</body>
+</html>
+
+
+  
+  
+ 
+  

@@ -34,7 +34,15 @@
               <% end %>
             </tbody>
           </table>
+
+          <%= form_tag import_csv_hotels_path, multipart: true do %>
+          <%= file_field_tag :file %>
+          <%= submit_tag 'Import CSV' %>
+        <% end %>
+        
         <%= link_to "New hotel", new_hotel_path, class: 'btn btn-outline-primary'  %>
+
+        <%= link_to "AllHotelPDF", hotels_path(format: :pdf), layouts: 'pdf' %>
 
       </div>
     </div>

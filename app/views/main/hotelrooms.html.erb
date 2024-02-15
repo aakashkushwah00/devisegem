@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <%# <%= stylesheet_link_tag "roomstyle" %>
+
+</head>
+<body>
+    <%# <div class="container">
+        <div class="row">
+            <div class="col">
+
+            <div class="card">
+                <div class="first-content">
+                </div>
+            </div>
+
+            <div class="second-content">
+                <h1>Shose</h1><br>
+                <p>Price: <i>23$</i> </p>
+                <h3>70% off</h3>
+                <a href="#">Order Now </a>
+            </div>
+
+            </div>
+        </div>
+    </div> %>
+
+    <!-- our hotels -->
+      <div  class="our_room" id="rooms">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Our rooms</h2>
+                     <p>Lorem Ipsum available, but the majority have suffered </p>
+                  </div>
+               </div>
+            </div>
+
+            <div class="row">
+            
+               <% @rooms.each do |room| %>
+               <%# <div class="card box-shadow"> %>
+                <div class="col-md-4 col-sm-6 d-flex py-3 py-sm-0 ">
+                    <div id="serv_hover"  class="room">
+
+                        <div class="room_img">
+                            <%= image_tag room.room_photo, class: "img-fluid rounded card-img-top" %>
+                        </div>
+
+                        <%# <div class="card-body">
+                            <h1 class="card-title" >hii</h1>
+                        </div> %>
+
+
+                        <div class="bed_room">
+                            <h3>Hotel Name : <%= room.room_type %> </h3>
+                            <p>hotel address : <%= room.price %></p>
+                        </div>
+
+                        <%# <a href="#", class="btn btn-primary">Go Somewhere</a> %>
+                        <%= link_to 'Click Me', main_path(room), class: 'btn btn-primary' %>
+                    </div>
+                </div>
+                <%# </div> %>
+                  <% end %>
+               
+              
+            </div>
+         </div>
+      </div>
+<!-- end our hotels -->
+</body>
+</html>

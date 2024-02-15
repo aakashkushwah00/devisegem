@@ -1,4 +1,16 @@
+require 'resque/server'
 Rails.application.routes.draw do
+  get 'payments/index'
+  get 'payments/new'
+  get 'transacations/index'
+ 
+  get 'wallets/index'
+  get 'bookings/new'
+  get 'bookings/index'
+  get 'reservations/index'
+  get 'reservations/show'
+  get 'reservations/new'
+  get 'reservations/edit'
   # get 'employees/index'
   # get 'employees/show'
   # get 'employees/new'
@@ -27,11 +39,56 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :hotels do
-    resources :rooms 
+    resources :rooms do 
+    end
     resources :employees
+    collection do
+      post 'import_csv'
+    end
+    # resources :employees, only: [:index, :new, :create]
   end
-  
-  get 'rooms/allrooms', to: 'rooms#allrooms';
+  # resources :bookings, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
+  resources :bookings 
+  
+  resources :payments
+  
+  # resources :payments
+
+  resources :dashboard
+
+  resources :checkout, only: [:create]
+
+  resources :main
+
+  authenticate :user do
+    mount Resque::Server.new, at: '/jobs'
+  end
+
+  # authenticate :user, -> (u) {u.id == 11} do
+  #   mount Resque::Server.new, at: '/jobs'
+  # end
+
+
+  # resources :products
+
+  post 'checkout/create', to: 'checkout#create'
+  # resources :checkout
+
+
+
+
+  get 'rooms/allrooms', to: 'rooms#allrooms';
+  get 'rooms/roominsidehotel', to: 'rooms#roominsidehotel';
+
+
+  get 'main/hotelrooms/:hotel_id', to: 'main#hotelrooms', as: 'test'
+
+  get 'rooms/hotelallrooms', to: 'rooms#hotelallrooms'
+
+  # get 'payments/new', to: 'payments#new'
+  # get 'payments/create', to: 'payments#create'
+
+  resources :payments
   
 end

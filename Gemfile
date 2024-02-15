@@ -47,6 +47,11 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
+
+  gem "letter_opener"
+
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -71,3 +76,17 @@ gem "bootstrap"
 
 gem "sassc-rails"
 gem "rolify"
+
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
+gem 'stripe'
+
+# gem 'sidekiq'
+# gem "sidekiq-cron", "~> 1.12"
+
+gem "whenever"
+
+gem 'resque'
+
+gem 'faker'

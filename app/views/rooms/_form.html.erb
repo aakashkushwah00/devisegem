@@ -5,7 +5,7 @@
         <div class='card border-0 shadow' >
           <div class='card-body'>
            
-              <%= form_with model: [ @hotel, @hotel.rooms.build ] do |form| %>
+              <%= form_with model: [ hotel, hotel.rooms.build ] do |form| %>
               <div>
                 <%= form.label :price %><br>
                 <%= form.text_field :price, class: "form-control my-3 py-2" %>
@@ -26,6 +26,30 @@
                 <%= form.label :occupancy %><br>
                 <%= form.text_field :occupancy, class: "form-control my-3 py-2" %><br>
                 <% @room.errors.full_messages_for(:occupancy).each do |message| %>
+                  <div><%= message %></div>
+                <% end %>
+              </div>
+
+              <div>
+                <%= form.label :capacity %><br>
+                <%= form.text_field :capacity, class: "form-control my-3 py-2" %><br>
+                <% @room.errors.full_messages_for(:capacity).each do |message| %>
+                  <div><%= message %></div>
+                <% end %>
+              </div>
+
+              <div>
+                <%= form.label :floor_number %><br>
+                <%= form.text_field :floor_number, class: "form-control my-3 py-2" %><br>
+                <% @room.errors.full_messages_for(:floor_number).each do |message| %>
+                  <div><%= message %></div>
+                <% end %>
+              </div>
+
+              <div>
+                <%= form.label :room_photo %><br>
+                <%= form.file_field :room_photo, class: "form-control my-3 py-2" %><br>
+                <% @room.errors.full_messages_for(:room_photo).each do |message| %>
                   <div><%= message %></div>
                 <% end %>
               </div>

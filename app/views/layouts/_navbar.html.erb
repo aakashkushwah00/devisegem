@@ -34,7 +34,19 @@
             <a class="nav-link active" aria-current="page" href="#">Services</a>
           </li>
 
-        </ul>
+          <li class="nav-item">
+            <%# <a class="nav-link active" aria-current="page" href="#">Services</a> %>
+            <%= link_to 'Booking', bookings_index_path, class: 'nav-link active' %>
+          </li>
+
+
+       
+     
+
+        
+
+      </div>
+
         <%# <form class=""> %>
           <%# <a class="btn btn-outline-primary mr-2" href="#">Sign-Up</a> %>
           <%# <a class="btn btn-outline-success" href="#">Sign-In</a> %>
@@ -63,6 +75,9 @@
           Book Now
         </button>
 
+      
+
+
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -76,6 +91,10 @@
                   <div class="form-group">
                     <label for="">Choose hotel</label>
                     <input type="text" name="" class="form-control">
+                   
+    
+                   
+
                   </div>
 
                   <div class="form-group">

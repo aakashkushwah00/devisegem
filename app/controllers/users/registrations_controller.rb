@@ -11,6 +11,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   # def create
+  #    # Send welcome email upon successful registration
+  #    UserMailer.welcome_email(@user).deliver_now
   #   super
   # end
 
